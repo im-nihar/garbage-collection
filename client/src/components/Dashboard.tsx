@@ -83,27 +83,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-const DUMMY_VALUES = [
-  {
-    dateTime: "2025-01-20T17:25",
-    garbageType: "Both",
-  },
-  {
-    dateTime: "2025-01-18T17:25",
-    garbageType: "Green",
-  },
-
-  {
-    dateTime: "2025-01-15T17:25",
-    garbageType: "Both",
-  },
-  {
-    dateTime: "2025-01-05T17:25",
-    garbageType: "Recyclable",
-  },
-
-  {
-    dateTime: "2025-01-1T17:25",
-    garbageType: "Both",
-  },
-];
