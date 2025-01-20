@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../styles/GarbageCalender.css"; // Import the CSS file
@@ -28,6 +28,10 @@ const DUMMY_VALUES = [
 
 const GarbageCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setSelectedDate(null);
+  }, []);
 
   const getShortType = (type: string) => {
     switch (type) {
@@ -65,10 +69,10 @@ const GarbageCalendar: React.FC = () => {
   };
 
   const tileClassName = ({ date, view }: { date: Date; view: string }) => {
-    if (view === 'month') {
-      const formattedDate = date.toISOString().split('T')[0];
+    if (view === "month") {
+      const formattedDate = date.toISOString().split("T")[0];
       const event = DUMMY_VALUES.find(
-        (item) => item.dateTime.split('T')[0] === formattedDate
+        (item) => item.dateTime.split("T")[0] === formattedDate
       );
       if (event) {
         return `garbage-type-${event.garbageType.toLowerCase()}`;
