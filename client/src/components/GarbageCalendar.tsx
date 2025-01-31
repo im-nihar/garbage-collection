@@ -5,24 +5,20 @@ import "../styles/GarbageCalender.css"; // Import the CSS file
 
 const DUMMY_VALUES = [
   {
-    dateTime: "2025-01-20T17:25",
+    dateTime: "2025-01-09T17:25",
     garbageType: "Both",
   },
   {
-    dateTime: "2025-01-18T17:25",
+    dateTime: "2025-01-12T17:25",
     garbageType: "Green",
   },
   {
-    dateTime: "2025-01-15T17:25",
+    dateTime: "2025-01-19T17:25",
     garbageType: "Both",
   },
   {
-    dateTime: "2025-01-05T17:25",
-    garbageType: "Recyclable",
-  },
-  {
-    dateTime: "2025-01-01T17:25",
-    garbageType: "Both",
+    dateTime: "2025-01-27T17:25",
+    garbageType: "Green",
   },
 ];
 

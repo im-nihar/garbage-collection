@@ -63,3 +63,7 @@
   margin-right: 10px;
 }
 
+.react-calendar{
+  min-width: 300px;
+  max-width: 500px;
+}
