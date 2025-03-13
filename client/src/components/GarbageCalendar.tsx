@@ -3,26 +3,21 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "../styles/GarbageCalender.css"; // Import the CSS file
 
-const DUMMY_VALUES = [
-  {
-    dateTime: "2025-01-09T17:25",
-    garbageType: "Both",
-  },
-  {
-    dateTime: "2025-01-12T17:25",
-    garbageType: "Green",
-  },
-  {
-    dateTime: "2025-01-19T17:25",
-    garbageType: "Both",
-  },
-  {
-    dateTime: "2025-01-27T17:25",
-    garbageType: "Green",
-  },
-];
+// type GarbageType = "Green" | "Recyclable" | "Both";
 
-const GarbageCalendar: React.FC = () => {
+// interface GarbageEvent {
+//   dateTime: string;
+//   garbageType: GarbageType;
+// }
+
+// interface GarbageCalendarProps {
+//   DUMMY_VALUES: GarbageEvent[];
+// }
+
+const GarbageCalendar = (props: any) => {
+  const { DUMMY_VALUES } = props;
+  // console.log("DUMMY_VALUES",DUMMY_VALUES,props.DUMMY_VALUES);
+  
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -46,11 +41,11 @@ const GarbageCalendar: React.FC = () => {
     if (view === "month") {
       const formattedDate = date.toISOString().split("T")[0];
       const events = DUMMY_VALUES.filter(
-        (item) => item.dateTime.split("T")[0] === formattedDate
+        (item: any) => item.dateTime.split("T")[0] === formattedDate
       );
       return (
         <div className="tile-content">
-          {events.map((event, index) => (
+          {events.map((event: { garbageType: string }, index: number) => (
             <div
               key={index}
               className={`garbage-name garbage-type-${event.garbageType.toLowerCase()} `}
@@ -68,7 +63,7 @@ const GarbageCalendar: React.FC = () => {
     if (view === "month") {
       const formattedDate = date.toISOString().split("T")[0];
       const event = DUMMY_VALUES.find(
-        (item) => item.dateTime.split("T")[0] === formattedDate
+        (item: any) => item.dateTime.split("T")[0] === formattedDate
       );
       if (event) {
         return `garbage-type-${event.garbageType.toLowerCase()}`;
